@@ -56,6 +56,26 @@ const App = () => {
     );
   };
 
+  const camera = async () => {
+    const result = await request(PERMISSIONS.ANDROID.CAMERA);
+
+    if (result !== 'granted') {
+      alert('Permission gak ada');
+      return;
+    }
+
+    ImagePicker.openCamera({
+      cropping: false,
+      compressImageMaxWidth: 750,
+    })
+      .then(image => {
+        setImage(image);
+      })
+      .catch(e => {
+        alert(e?.message);
+      });
+  };
+
   const shareText = async () => {
     try {
       await Share.open({
@@ -131,6 +151,10 @@ const App = () => {
           onPress={() => imagePicker(true)}
           style={styles.button}>
           <Text style={styles.buttonText}>Image picker with crop</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={camera} style={styles.button}>
+          <Text style={styles.buttonText}>Camera</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={shareText} style={styles.button}>
