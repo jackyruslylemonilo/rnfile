@@ -1,0 +1,26 @@
+diff --git a/node_modules/react-native-image-crop-picker/android/src/main/AndroidManifest.xml b/node_modules/react-native-image-crop-picker/android/src/main/AndroidManifest.xml
+index d9b32ba..d4ff6f9 100644
+--- a/node_modules/react-native-image-crop-picker/android/src/main/AndroidManifest.xml
++++ b/node_modules/react-native-image-crop-picker/android/src/main/AndroidManifest.xml
+@@ -7,7 +7,7 @@
+         </intent>
+     </queries>
+ 
+-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+ 
+     <application>
+ 
+diff --git a/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java b/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java
+index 6335949..e51036f 100644
+--- a/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java
++++ b/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java
+@@ -228,7 +228,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
+         List<String> supportedPermissions = new ArrayList<>(requiredPermissions);
+ 
+         // android 11 introduced scoped storage, and WRITE_EXTERNAL_STORAGE no longer works there
+-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
++        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+             supportedPermissions.remove(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+         }
+ 

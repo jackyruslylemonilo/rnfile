@@ -1,0 +1,13 @@
+diff --git a/node_modules/rn-fetch-blob/android/src/main/AndroidManifest.xml b/node_modules/rn-fetch-blob/android/src/main/AndroidManifest.xml
+index 1c92420..f00e7ae 100644
+--- a/node_modules/rn-fetch-blob/android/src/main/AndroidManifest.xml
++++ b/node_modules/rn-fetch-blob/android/src/main/AndroidManifest.xml
+@@ -19,7 +19,7 @@
+     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+ 
+     <!-- Required to read and write the expansion files on shared storage -->
+-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+ 
+     <application android:label="@string/app_name">
+ 

@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-share/package.json b/node_modules/react-native-share/package.json
+index 76c080a..60ebaef 100644
+--- a/node_modules/react-native-share/package.json
++++ b/node_modules/react-native-share/package.json
+@@ -10,7 +10,6 @@
+     "url": "https://github.com/react-native-community/react-native-share/issues"
+   },
+   "main": "lib/commonjs/index.js",
+-  "react-native": "src/index.tsx",
+   "module": "lib/module/index.js",
+   "types": "lib/typescript/index.d.ts",
+   "files": [
